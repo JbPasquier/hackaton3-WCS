@@ -1,25 +1,17 @@
 'use strict';
 
 var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
+var serveStatic = require('serve-static');
+
 
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
-  require('time-grunt')(grunt); 
+  require('time-grunt')(grunt);
 
   grunt.initConfig({
-    yeoman: {
-      // configurable paths
+    hswf: {
       app: require('./bower.json').appPath || 'app/static',
       dist: 'app/static'
-    },
-    sync: {
-      dist: {
-        files: [{
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: '**'
-        }]
-      }
     },
     watch: {
       options: {
@@ -27,18 +19,17 @@ module.exports = function (grunt) {
       },
       src: {
         files: [
-          '<%= yeoman.app %>/*.html',
-          '<%= yeoman.app %>/css/**/*',
-          '<%= yeoman.app %>/js/**/*',
-          '<%= yeoman.app %>/views/**/*'
-        ],
-        //tasks: ['sync:dist']
+          '<%= hswf.app %>/*.html',
+          '<%= hswf.app %>/css/**/*',
+          '<%= hswf.app %>/js/**/*',
+          '<%= hswf.app %>/views/**/*'
+        ]
       }
     },
     connect: {
       proxies: [
         {
-          context: '/flaskang',
+          context: '/hswf',
           host: 'localhost',
           port: 5000,
           https: false,
@@ -47,59 +38,21 @@ module.exports = function (grunt) {
       ],
       options: {
         port: 9000,
-        // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
         options: {
           open: true,
           base: [
-            '<%= yeoman.app %>'
+            '<%= hswf.app %>'
           ],
           middleware: function (connect) {
             return [
               proxySnippet,
-              connect.static(require('path').resolve('app/static'))
+              serveStatic(require('path').resolve('app/static'))
             ];
           }
-        }
-      },
-      /*
-      dist: {
-        options: {
-          base: '<%= yeoman.dist %>'
-        }
-      }
-      */
-    },
-    // Put files not handled in other tasks here
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: '**'
-        }]
-      },
-    },
-    // Test settings
-    karma: {
-      unit: {
-        configFile: 'test/config/karma.conf.js',
-        singleRun: true
-      }
-    },
-    bowercopy: {
-      options: {
-        destPrefix: '<%= yeoman.app %>'
-      },
-      test: {
-        files: {
-          'test/lib/angular-mocks': 'angular-mocks',
-          'test/lib/angular-scenario': 'angular-scenario'
         }
       }
     }
@@ -107,7 +60,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', function (target) {
     grunt.task.run([
-      //'copy:dist',
       'configureProxies',
       'connect:livereload',
       'watch'

@@ -1,5 +1,5 @@
 // Declare app level module which depends on filters, and services
-angular.module('flaskang', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date'])
+angular.module('hswf', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.date'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {

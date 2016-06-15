@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('flaskang')
+angular.module('hswf')
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/datas', {

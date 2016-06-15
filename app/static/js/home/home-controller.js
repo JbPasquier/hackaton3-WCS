@@ -1,3 +1,3 @@
-angular.module('flaskang')
+angular.module('hswf')
   .controller('HomeController', ['$scope', function ($scope) {
   }]);

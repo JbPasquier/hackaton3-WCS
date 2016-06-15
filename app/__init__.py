@@ -6,7 +6,4 @@ app.config.from_object('config')
 db = SQLAlchemy(app)
 
 
-from app.models import datas
 from app.routes import index
-
-from app.routes import datas

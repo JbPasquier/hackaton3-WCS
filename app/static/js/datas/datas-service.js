@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('flaskang')
+angular.module('hswf')
   .factory('Datas', ['$resource', function ($resource) {
-    return $resource('flaskang/datas/:id', {}, {
+    return $resource('hswf/datas/:id', {}, {
       'query': { method: 'GET', isArray: true},
       'get': { method: 'GET'},
       'update': { method: 'PUT'}

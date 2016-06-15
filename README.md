@@ -1,10 +1,12 @@
-# Flaskang
+# hswf
+
+Angular project
 
 Python Flask + JS Angular
 
 ## Setup
 
-```
+```bash
 bash install.sh
 npm i
 bower install

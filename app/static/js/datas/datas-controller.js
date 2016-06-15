@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('flaskang')
+angular.module('hswf')
   .controller('DatasController', ['$scope', '$modal', 'resolvedDatas', 'Datas',
     function ($scope, $modal, resolvedDatas, Datas) {
 
