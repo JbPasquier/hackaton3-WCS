@@ -1,6 +1,133 @@
 {
 	"baseName": "hswf",
 	"entities": [
+		{
+			"name": "salons",
+			"attrs": [
+				{
+					"attrName": "title",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "password",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "departurePlace",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "arrivePlace",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "departuredate",
+					"attrType": "Integer",
+					"min": "",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "returndate",
+					"attrType": "Integer",
+					"min": "",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "description",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "invite",
+			"attrs": [
+				{
+					"attrName": "salon_id",
+					"attrType": "Integer",
+					"min": "",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "name",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "firstName",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "email",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "activitis",
+			"attrs": [
+				{
+					"attrName": "salon_id",
+					"attrType": "Integer",
+					"min": "",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "description",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": false
+				},
+				{
+					"attrName": "cost",
+					"attrType": "Integer",
+					"min": "",
+					"max": "",
+					"enumValues": [],
+					"required": false
+				}
+			]
+		}
 	],
 	"resources": []
 }
