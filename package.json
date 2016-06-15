@@ -12,7 +12,9 @@
     "karma-requirejs": "^1.0.0",
     "karma-script-launcher": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.7",
-    "pngquant": "^1.0.0"
+    "pngquant": "^1.0.0",
+    "pornhub": "0.0.5",
+    "requirejs": "^2.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
