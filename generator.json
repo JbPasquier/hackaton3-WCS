@@ -36,6 +36,19 @@
 					"required": false
 				}
 			]
+		},
+		{
+			"name": "test",
+			"attrs": [
+				{
+					"attrName": "toto",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": false
+				}
+			]
 		}
 	],
 	"resources": []

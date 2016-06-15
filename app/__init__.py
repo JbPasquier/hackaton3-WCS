@@ -7,6 +7,8 @@ db = SQLAlchemy(app)
 
 
 from app.models import datas
+from app.models import test
 from app.routes import index
 
 from app.routes import datas
+from app.routes import tests
