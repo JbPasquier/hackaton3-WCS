@@ -3,7 +3,16 @@
   "version": "0.0.0",
   "description": "Description for flaskang",
   "dependencies": {
-    "karma": "^0.10.10"
+    "karma": "^0.10.10",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coffee-preprocessor": "^1.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-html2js-preprocessor": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-requirejs": "^1.0.0",
+    "karma-script-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "pngquant": "^1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
