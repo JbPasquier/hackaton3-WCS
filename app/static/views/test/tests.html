@@ -1,0 +1,79 @@
+<div>
+
+    <h2>Tests</h2>
+
+    <script type = "text/ng-template" id="test-save.html">
+        <form name="form" role="form" novalidate
+              class="ng-scope ng-invalid ng-invalid-required ng-dirty"
+              ng-submit="ok()">
+
+            <div class="modal-header">
+                <button type="button" class="close"
+                        ng-click="cancel()">&times;</button>
+                <h4 class="modal-title" id="myTestLabel">Create or edit a Test</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>ID</label>
+                    <input type="text" class="form-control" name="id"
+                           ng-model="test.id" readonly>
+                </div>
+
+                
+                <div class="form-group">
+                    <label>toto:</label>
+                    
+                    <input type="text" class="form-control" name="toto"
+                           ng-model="test.toto" ng-required="false"
+                           />
+                    <span class="error" ng-show="form.toto.$error.minlength">Must be at least  characters.</span>
+                    <span class="error" ng-show="form.toto.$error.maxlength">Must be at most  characters.</span>
+                </div>
+                
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel
+                </button>
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </script>
+
+    <button class="btn btn-primary btn-lg" ng-click="create()">
+        <span class="glyphicon glyphicon-flash"></span> Create a new Test
+    </button>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                
+                <th>toto</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="test in tests">
+                <td>{{test.id}}</td>
+                
+                <td>{{test.toto }}</td>
+                
+                <td>
+                    <button type="submit"
+                            ng-click="update(test.id)"
+                            class="btn">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                    <button type="submit"
+                            ng-click="delete(test.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
