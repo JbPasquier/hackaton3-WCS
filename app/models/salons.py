@@ -2,7 +2,7 @@ from app import db
 
 class Salons(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    
+
     title = db.Column(db.String)
     
     password = db.Column(db.String)
@@ -11,11 +11,13 @@ class Salons(db.Model):
     
     arrivePlace = db.Column(db.String)
     
-    departuredate = db.Column(db.Integer)
+    departureDate = db.Column(db.Integer)
     
     returndate = db.Column(db.Integer)
     
     description = db.Column(db.String)
+    
+    thematique = db.Column(db.Enum('fisting camp', 'sexfriend', 'hot', 'gangbang', 'only virgin', 'roleplay', 'cosplay', 'hardcore', 'bukkake', 'milf', 'daddy', 'yoan', 'animals', 'under 18', 'soft', 'toys', 'augmented reality', 'lesbian', 'fetishist', 'over 50', 'teen', 'bdsm', 'gore', 'php'))
     
 
     def to_dict(self, toto, titi):
@@ -24,14 +26,14 @@ class Salons(db.Model):
             password = self.password,
             departurePlace = self.departurePlace,
             arrivePlace = self.arrivePlace,
-            departuredate = self.departuredate,
+            departureDate = self.departureDate,
             returndate = self.returndate,
             description = self.description,
+            thematique = self.thematique,
             invites = toto,
             activities = titi,
             id = self.id
         )
-
 
     def __repr__(self):
         return '<Salons %r>' % (self.id)

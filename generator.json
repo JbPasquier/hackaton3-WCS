@@ -2,67 +2,6 @@
 	"baseName": "hswf",
 	"entities": [
 		{
-			"name": "salons",
-			"attrs": [
-				{
-					"attrName": "title",
-					"attrType": "String",
-					"minLength": "",
-					"maxLength": "",
-					"enumValues": [],
-					"required": true
-				},
-				{
-					"attrName": "password",
-					"attrType": "String",
-					"minLength": "",
-					"maxLength": "",
-					"enumValues": [],
-					"required": true
-				},
-				{
-					"attrName": "departurePlace",
-					"attrType": "String",
-					"minLength": "",
-					"maxLength": "",
-					"enumValues": [],
-					"required": true
-				},
-				{
-					"attrName": "arrivePlace",
-					"attrType": "String",
-					"minLength": "",
-					"maxLength": "",
-					"enumValues": [],
-					"required": true
-				},
-				{
-					"attrName": "departuredate",
-					"attrType": "Integer",
-					"min": "",
-					"max": "",
-					"enumValues": [],
-					"required": true
-				},
-				{
-					"attrName": "returndate",
-					"attrType": "Integer",
-					"min": "",
-					"max": "",
-					"enumValues": [],
-					"required": true
-				},
-				{
-					"attrName": "description",
-					"attrType": "String",
-					"minLength": "",
-					"maxLength": "",
-					"enumValues": [],
-					"required": true
-				}
-			]
-		},
-		{
 			"name": "invite",
 			"attrs": [
 				{
@@ -125,6 +64,98 @@
 					"max": "",
 					"enumValues": [],
 					"required": false
+				}
+			]
+		},
+		{
+			"name": "salons",
+			"attrs": [
+				{
+					"attrName": "title",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "password",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "departurePlace",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "arrivePlace",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "departureDate",
+					"attrType": "Integer",
+					"min": "0",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "returndate",
+					"attrType": "Integer",
+					"min": "0",
+					"max": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "description",
+					"attrType": "String",
+					"minLength": "",
+					"maxLength": "",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "thematique",
+					"attrType": "Enum",
+					"enumValues": [
+						"fisting camp",
+						"sexfriend",
+						"hot",
+						"gangbang",
+						"only virgin",
+						"roleplay",
+						"cosplay",
+						"hardcore",
+						"bukkake",
+						"milf",
+						"daddy",
+						"yoan",
+						"animals",
+						"under 18",
+						"soft",
+						"toys",
+						"augmented reality",
+						"lesbian",
+						"fetishist",
+						"over 50",
+						"teen",
+						"bdsm",
+						"gore",
+						"php"
+					],
+					"required": true
 				}
 			]
 		}
