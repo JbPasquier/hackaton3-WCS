@@ -34,6 +34,13 @@ def create_salons():
     db.session.commit()
     return jsonify(entity.to_dict()), 201
 
+
+@app.route('/hswf/salons/access', methods = ['POST'])
+def get_salons_by_password():
+    entities = salons.Salons.query.filter_by(password=request.form['password'])
+    return json.dumps([entity.to_dict([entity.to_dict() for entity in invite.Invite.query.filter_by(salon_id=entity.id)],[entity.to_dict() for entity in activitis.Activitis.query.filter_by(salon_id=entity.id)]) for entity in entities])
+
+
 @app.route('/hswf/salons/<int:id>', methods = ['PUT'])
 def update_salons(id):
     entity = salons.Salons.query.get(id)
@@ -66,3 +73,4 @@ def delete_salons(id):
     db.session.delete(entity)
     db.session.commit()
     return '', 204
+
