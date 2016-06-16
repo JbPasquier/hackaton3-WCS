@@ -1,20 +1,71 @@
 <!doctype html>
-<html lang="en" ng-app="hswf">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hswf</title>
-  <link href="css/app.css" rel="stylesheet">
-</head>
-<body>
-  <ng-view></ng-view>
-  <script src="lib/jquery/dist/jquery.js"></script>
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular-route/angular-route.js"></script>
+<html lang="fr" ng-app="hswf">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hswf</title>
+        <link href="css/app.css" rel="stylesheet">
+    </head>
+    <body>
 
-  <script src="js/app.js"></script>
-  <script src="js/home/home-controller.js"></script>
+        <div class="page-content">
+            <div class="wrapper">
+                <header>
+                    <h1 id="title">H S W F</h1>
+                    <div class="link-home">
 
-</body>
+                        <a href="#/">
+                            <span>Accueil</span>
+                        </a>
+                        <a href="#/salons">
+                            <span>Créer un salon</span>
+                        </a>
+                        <a href="#/se-connecter">
+                            <span>Accéder à un salon</span>
+                        </a>
+                    </div>
+                </header>
+                <article class="fullsize" style='background-color: pink'>
+                    <img src="assets/logo.png" alt="" />
+                </article>
+                <article class="fullsize">
+                    <div class='col-3'>
+                        <img src="http://cdn1a.limg.pornhub.phncdn.com/m=e-yaaGqaadb/pics/albums/010/106/071/144228171/original_144228171.gif" alt="" />
+                        <legend>Fuck with them</legend>
+                    </div>
+                    <div class='col-3'>
+                        <img src="http://cdn1a.limg.pornhub.phncdn.com/m=e-yaaGqaadb/pics/albums/003/498/062/65672221/original_65672221.gif" alt="" />
+                        <legend>Discover new horizon</legend>
+                    </div>
+                    <div class='col-3'>
+                        <img src="http://i1.cdn2b.image.pornhub.phncdn.com/m=e-yaaGqaa/pics/albums/010/040/911/143905391/original_143905391.jpg" alt="" />
+                        <legend>Have fun with them</legend>
+                    </div>
+                </article>
+                <ng-view></ng-view>
+            </div>
+        </div>
+        <svg id="canvas" data-ng-init="init()">
+            <defs>
+                <clipPath id="canvas-mask"></clipPath>
+            </defs>
+            <rect id="canvas-background" clip-path="url(#canvas-mask)"></rect>
+            <g id="canvas-polygons"></g>
+        </svg>
+
+        <script src="lib/jquery/dist/jquery.js"></script>
+        <script src="lib/angular/angular.js"></script>
+        <script src="lib/angular-route/angular-route.js"></script>
+
+        <script src="js/app.js"></script>
+        <script src="js/salons/salonService.js"></script>
+        <script src="js/activities/activitiesService.js"></script>
+        <script src="js/invites/invitesService.js"></script>
+        <script src="js/email/emailService.js"></script>
+        <script src="js/salons/createSalonController.js"></script>
+        <script src="js/salons/openSalonController.js"></script>
+        <script src="js/salons/viewSalonController.js"></script>
+
+    </body>
 </html>

@@ -79,8 +79,22 @@ article.fullsize {
     text-align: center;
 }
 article.fullsize .col-3 {
-    width: calc(33vw - 10px * 2);
+    width: calc(25vw - 20px);
     display: inline-block;
+}
+article.fullsize .col-3 img {
+    width: auto;
+    height: 150px;
+    opacity: .5;
+    border-radius: 50%;
+}
+article.fullsize .col-3:hover img {
+    opacity: 1;
+}
+article.fullsize .col-3 legend {
+    text-align: center;
+    width: 100%;
+    font-weight: bolder;
 }
 #canvas {
     position: fixed;
