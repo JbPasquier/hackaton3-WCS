@@ -1,16 +1,136 @@
 // Declare app level module which depends on filters, and services
 angular.module('hswf', ['ngRoute'])
+    .service('salonService', function($http) {
+        return {
+            getAll: function() {
+                return $http.get('/hswf/salons');
+            },
+            getOne: function(id) {
+                return $http.get('/hswf/salons/' + id);
+            },
+            login: function(data) {
+                return $http.post('/hswf/salons/access', data);
+            },
+            create: function(data) {
+                return $http.post('/hswf/salons', data);
+            },
+            update: function(id, data) {
+                return $http.put('/hswf/salons/' + id, data);
+            },
+            delete: function(id) {
+                return $http.delete('/hswf/salons/' + id);
+            }
+        }
+    })
+    .service('invitesService', function($http) {
+        return {
+            getAll: function() {
+                return $http.get('/hswf/invites');
+            },
+            getOne: function(id) {
+                return $http.get('/hswf/invites/' + id);
+            },
+            create: function(data) {
+                return $http.post('/hswf/invites', data);
+            },
+            update: function(id, data) {
+                return $http.put('/hswf/invites/' + id, data);
+            },
+            delete: function(id) {
+                return $http.delete('/hswf/invites/' + id);
+            }
+        }
+    })
+    .service('activitiesService', function($http) {
+        return {
+            getAll: function() {
+                return $http.get('/hswf/activitis');
+            },
+            getOne: function(id) {
+                return $http.get('/hswf/activitis/' + id);
+            },
+            create: function(data) {
+                return $http.post('/hswf/activitis', data);
+            },
+            update: function(id, data) {
+                return $http.put('/hswf/activitis/' + id, data);
+            },
+            delete: function(id) {
+                return $http.delete('/hswf/activitis/' + id);
+            }
+        }
+    })
+    .service('emailService', function($http) {
+        return {
+            send: function(data) {
+                return $http.post('/send_msg', data);
+            }
+        }
+    })
+    .controller('openSalonController', function($scope, $location, salonService) {
+        $scope.openSalon = function() {
+            salonService.login({
+                password: $scope.salonPass
+            }).then(function(res) {
+                $location.path('/show/' + res.data[0].id);
+            }, function(err) {
+                $scope.error = 'Mot de passe invalide';
+            });
+        }
+        $scope.createSalon = function() {
+            salonService.create({
+                title: $scope.title,
+                password: $scope.cpassword,
+                departurePlace: $scope.departurePlace,
+                arrivePlace: $scope.arrivePlace,
+                departureDate: $scope.departureDate,
+                returndate: $scope.returndate,
+                description: $scope.description,
+                thematique: $scope.thematique
+            }).then(function(res) {
+                invitesService.create({
+                    salon_id: res.data.id,
+                    name: $scope.lastName,
+                    firstName: $scope.firstName,
+                    email: $scope.email
+                }).then(function(res2) {
+                    $location.path('/show/' + res.data.id);
+                }, function(err) {
+                    $scope.error2 = 'Ta fait de la merde espèce de boulet';
+                });
+            }, function(err) {
+                $scope.error2 = 'Mot de passe invalide';
+            });
+        }
+    })
+    .controller('viewSalonController', function($scope, $routeParams, $location, salonService) {
+        salonService.getOne($routeParams.id).then(function(res) {
+            $scope.salon = res.data;
+            console.dir(res.data);
+        }, function(err) {
+            $location.path('/');
+        });
+        $scope.createInvite = function() {
+            invitesService.create($scope.newInvite);
+        }
+        $scope.createActivite = function() {
+            activitiesService.create($scope.newActivity);
+        }
+        $scope.save = function() {
+            salonService.update($scope.obj).then(function(res) {
+                $scope.salon = res.data;
+            }, function(err) {
+                $scope.error = 'Tu t\'es foiré machin';
+            })
+        }
+    })
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/open', {
                 templateUrl: 'views/openSalon.html',
                 controller: 'openSalonController'
             })
-            .when('/create', {
-                templateUrl: 'views/createSalon.html',
-                controller: 'createSalonController'
-            })
-            .when('/show', {
+            .when('/show/:id', {
                 templateUrl: 'views/viewSalon.html',
                 controller: 'viewSalonController'
             })

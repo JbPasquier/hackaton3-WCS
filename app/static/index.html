@@ -12,9 +12,10 @@
         <div class="page-content">
             <div class="wrapper">
                 <header>
-                    <h1 id="title">H S W F</h1>
+                    <h1 id="title">Have Sex With Friends<br/>
+                        <small>You'll never see them like before</small>
+                    </h1>
                     <div class="link-home">
-
                         <a href="#/">
                             <span>Accueil</span>
                         </a>
@@ -27,23 +28,45 @@
                     </div>
                 </header>
                 <article class="fullsize" style='background-color: pink'>
-                    <img src="assets/logo.png" alt="" />
+                    <img src="assets/logo.png" alt=""/>
                 </article>
                 <article class="fullsize">
                     <div class='col-3'>
-                        <img src="http://cdn1a.limg.pornhub.phncdn.com/m=e-yaaGqaadb/pics/albums/010/106/071/144228171/original_144228171.gif" alt="" />
+                        <img src="assets/orkatz.jpg" alt=""/>
                         <legend>Fuck with them</legend>
+                        <span>Like never</span>
                     </div>
                     <div class='col-3'>
-                        <img src="http://cdn1a.limg.pornhub.phncdn.com/m=e-yaaGqaadb/pics/albums/003/498/062/65672221/original_65672221.gif" alt="" />
+                        <img src="assets/laurane.jpg" alt=""/>
                         <legend>Discover new horizon</legend>
+                        <span>Our best employee
+                            <b>Piggy Laurane</b>
+                            may help you for a small fee</span>
                     </div>
                     <div class='col-3'>
-                        <img src="http://i1.cdn2b.image.pornhub.phncdn.com/m=e-yaaGqaa/pics/albums/010/040/911/143905391/original_143905391.jpg" alt="" />
+                        <img src="assets/jerem.jpg" alt=""/>
                         <legend>Have fun with them</legend>
+                        <span>Play Monopoly or another game...</span>
                     </div>
                 </article>
-                <ng-view></ng-view>
+                <article class="fullsize" style='background-color:#dedede; margin-top: 20px; margin-bottom: 20px'>
+                    <ng-view></ng-view>
+                </article>
+                <div class="footer">
+                    <h2>About our dev-team</h2>
+                    <div>
+                        <img src="assets/valentin.png" alt="" style='border-radius: 50%'/>
+                        Valentine, Super-héroïne
+                    </div>
+                    <div>
+                        <img src="assets/jb.png" alt=""/>
+                        JB, Uh-nicorn
+                    </div>
+                    <div>
+                        <img src="assets/thierry.png" alt="" style='border-radius: 50%' />
+                        Thierry, Pot de paon-terre
+                    </div>
+                </div>
             </div>
         </div>
         <svg id="canvas" data-ng-init="init()">
@@ -59,13 +82,6 @@
         <script src="lib/angular-route/angular-route.js"></script>
 
         <script src="js/app.js"></script>
-        <script src="js/salons/salonService.js"></script>
-        <script src="js/activities/activitiesService.js"></script>
-        <script src="js/invites/invitesService.js"></script>
-        <script src="js/email/emailService.js"></script>
-        <script src="js/salons/createSalonController.js"></script>
-        <script src="js/salons/openSalonController.js"></script>
-        <script src="js/salons/viewSalonController.js"></script>
 
     </body>
 </html>

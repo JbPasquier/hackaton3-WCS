@@ -2,7 +2,10 @@
 <article class="fullsize">
     <h2>Accédez à votre salon</h2>
     <input type="password" ng-model="salonPass" placeholder='Mot de passe de votre salon...'/>
-    <button type="button" ng-click='openSalon()'>Ouvrir mon salon</button>
+    <button type="button" ng-click='openSalon()'>Ouvrir mon salon</button><br>
+    <span style='color: red'>
+        {{error}}
+    </span>
 </article>
 <hr>
 <article class="fullsize">
@@ -10,6 +13,17 @@
     <input type="text" ng-model="firstName" placeholder='Prénom'/>
     <input type="text" ng-model="lastName" placeholder='Nom'/>
     <input type="email" ng-model="email" placeholder='Email'/>
-    <button type="button" ng-click='createSalon()'>Créer un salon</button>
+    <input type="text" ng-model="title" placeholder='Intitulé de votre voyage'/>
+    <input type="text" ng-model="cpassword" placeholder='Choisissez un mot de passe (à partager avec vos amis)' />
+    <input type="text" ng-model="departurePlace" placeholder="Lieu de départ"/>
+    <input type="text" ng-model="arrivePlace" placeholder='Lieu de vos vacances'/>
+    <input type="number" ng-model="departureDate" placeholder='Date de départ en timestamp banane'/>
+    <input type="number" ng-model="returndate" placeholder="Date de retour en timestamp parce qu'on est cool"/>
+    <input type="text" ng-model="description" placeholder='Description de votre séjour'/>
+    <input type="text" ng-model="thematique" placeholder='Thématique SELECT BRODEL'/>
+    <button type="button" ng-click='createSalon()'>Créer un salon</button><br>
+    <span style='color: red'>
+        {{error2}}
+    </span>
 </article>
 <hr>
