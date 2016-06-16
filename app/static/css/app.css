@@ -1,5 +1,6 @@
 body {
     min-height: 2500px;
+    font-family: sans-serif;
 }
 header {
     height: 100vh;
@@ -76,6 +77,10 @@ article.fullsize {
     width: calc(100vw - 30px * 2);
     padding: 15px;
     text-align: center;
+}
+article.fullsize .col-3 {
+    width: calc(33vw - 10px * 2);
+    display: inline-block;
 }
 #canvas {
     position: fixed;
