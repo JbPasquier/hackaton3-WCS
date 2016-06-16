@@ -4,12 +4,12 @@ from flask import abort, jsonify, request
 import datetime
 import json
 
-@app.route('/flaskang/salons', methods = ['GET'])
+@app.route('/hswf/salons', methods = ['GET'])
 def get_all_salons():
     entities = salons.Salons.query.all()
     return json.dumps([entity.to_dict([entity.to_dict() for entity in invite.Invite.query.filter_by(salon_id=entity.id)],[entity.to_dict() for entity in activitis.Activitis.query.filter_by(salon_id=entity.id)]) for entity in entities])
 
-@app.route('/flaskang/salons/<int:id>', methods = ['GET'])
+@app.route('/hswf/salons/<int:id>', methods = ['GET'])
 def get_salons(id):
     entity = salons.Salons.query.get(id)
     invites = invite.Invite.query.filter_by(salon_id=entity.id)
@@ -18,7 +18,7 @@ def get_salons(id):
         abort(404)
     return json.dumps(entity.to_dict([entity.to_dict() for entity in invites], [entity.to_dict() for entity in activities]))
 
-@app.route('/flaskang/salons', methods = ['POST'])
+@app.route('/hswf/salons', methods = ['POST'])
 def create_salons():
     entity = salons.Salons(
         title = request.json['title']
@@ -34,7 +34,7 @@ def create_salons():
     db.session.commit()
     return jsonify(entity.to_dict()), 201
 
-@app.route('/flaskang/salons/<int:id>', methods = ['PUT'])
+@app.route('/hswf/salons/<int:id>', methods = ['PUT'])
 def update_salons(id):
     entity = salons.Salons.query.get(id)
     if not entity:
@@ -54,7 +54,7 @@ def update_salons(id):
     db.session.commit()
     return jsonify(entity.to_dict()), 200
 
-@app.route('/flaskang/salons/<int:id>', methods = ['DELETE'])
+@app.route('/hswf/salons/<int:id>', methods = ['DELETE'])
 def delete_salons(id):
     entity = salons.Salons.query.get(id)
     invites = invite.Invite.query.filter_by(salon_id=entity.id)
