@@ -1,1 +1,29 @@
-<h1>Home sweet home</h1>
+<div class="page-content">
+    <div class="wrapper">
+        <header>
+            <h1 id="title">H S W F</h1>
+            <div class="link-home">
+
+                <a href="#/">
+                    <span>Accueil</span>
+                </a>
+                <a href="#/salons">
+                    <span>Créer un salon</span>
+                </a>
+                <a href="#/se-connecter">
+                    <span>Accéder à un salon</span>
+                </a>
+            </div>
+        </header>
+        <article class="fullsize" style='background-color: pink'>
+            <h2>Test</h2>
+        </article>
+    </div>
+</div>
+<svg id="canvas" data-ng-init="init()">
+    <defs>
+        <clipPath id="canvas-mask"></clipPath>
+    </defs>
+    <rect id="canvas-background" clip-path="url(#canvas-mask)"></rect>
+    <g id="canvas-polygons"></g>
+</svg>
