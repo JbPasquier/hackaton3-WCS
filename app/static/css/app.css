@@ -162,11 +162,17 @@ div.left-pane {
     display: inline-block;
     width: 60%;
     text-align: left;
+    float: left;
 }
 div.right-pane {
     display: inline-block;
-    width: 30%;
+    width: 40%;
     text-align: left;
+    float: right;
+}
+div.pane {
+    display: inline-block;
+    text-align: center;
 }
 #canvas {
     position: fixed;
