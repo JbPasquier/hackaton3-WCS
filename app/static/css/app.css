@@ -124,6 +124,16 @@ input {
   margin: 0 auto;
   margin-bottom: 8px;
 }
+input.short {
+    width: 30%;
+    display: inline;
+    margin: 0;
+}
+input.reallyShort {
+    width: 15%;
+    display: inline;
+    margin: 0;
+}
 input:focus,
 input.focus {
   border-bottom: solid 4px #008A29;
@@ -143,6 +153,16 @@ button, input[type=submit] {
 	font-size:16px;
 	font-weight:700;
 	padding:4px 12px;
+}
+div.left-pane {
+    display: inline-block;
+    width: 60%;
+    text-align: left;
+}
+div.right-pane {
+    display: inline-block;
+    width: 30%;
+    text-align: left;
 }
 #canvas {
     position: fixed;

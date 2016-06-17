@@ -67,7 +67,7 @@ angular.module('hswf', ['ngRoute'])
             }
         }
     })
-    .controller('openSalonController', function($scope, $location, salonService) {
+    .controller('openSalonController', function($scope, $location, salonService, invitesService) {
         $scope.openSalon = function() {
             salonService.login({
                 password: $scope.salonPass
@@ -103,18 +103,39 @@ angular.module('hswf', ['ngRoute'])
             });
         }
     })
-    .controller('viewSalonController', function($scope, $routeParams, $location, salonService) {
+    .controller('viewSalonController', function($scope, $routeParams, $location, salonService, activitiesService, invitesService) {
+        $scope.total = 0;
         salonService.getOne($routeParams.id).then(function(res) {
             $scope.salon = res.data;
-            console.dir(res.data);
+            $scope.salon.departureDate = new Date($scope.salon.departureDate).toLocaleString('en-US',{weekday: "long", year: "numeric", month: "long", day: "numeric"});
+            $scope.salon.returndate = new Date($scope.salon.returndate).toLocaleString('en-US',{weekday: "long", year: "numeric", month: "long", day: "numeric"});
+            $scope.newActivity = {
+                salon_id: res.data.id
+            }
+            $scope.newInvite = {
+                salon_id: res.data.id
+            }
+            $scope.salon.activities.forEach(function(v){$scope.total+=v.cost;});
         }, function(err) {
             $location.path('/');
         });
         $scope.createInvite = function() {
-            invitesService.create($scope.newInvite);
+            invitesService.create($scope.newInvite).then(function(res) {
+                $scope.salon.invites.push(res.data);
+                $scope.newInvite = {
+                    salon_id: res.data.id
+                }
+            });
         }
         $scope.createActivite = function() {
-            activitiesService.create($scope.newActivity);
+            activitiesService.create($scope.newActivity).then(function(res) {
+                $scope.salon.activities.push(res.data);
+                $scope.total = 0;
+                $scope.salon.activities.forEach(function(v){$scope.total+=v.cost;});
+                $scope.newActivity = {
+                    salon_id: res.data.id
+                }
+            });
         }
         $scope.save = function() {
             salonService.update($scope.obj).then(function(res) {

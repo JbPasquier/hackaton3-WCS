@@ -18,5 +18,32 @@
         {{salon.returndate}}</span>
     <br>
     <span>Theme :
-        {{salon.thematique}}</span>
+        {{salon.thematique[0].toUpperCase() + salon.thematique.slice(1)}}</span>
+</div>
+<hr>
+<div class="left-pane">
+    <h3>Activities &amp; Costs</h3>
+    <div ng-repeat='activity in salon.activities'>
+        <input type="text" ng-model='salon.activities[$index].description' class='short' placeholder="Activities (Hotels, visits, accessories...)"/>
+        <input type="number" ng-model='salon.activities[$index].cost' class='short' placeholder='$...'/>
+        <button type="button" ng-click='modify($index)'>Modifier</button>
+    </div>
+    <input type="text" ng-model='newActivity.description' class='short' placeholder="Activities (Hotels, visits, accessories...)"/>
+    <input type="number" ng-model='newActivity.cost' class='short' placeholder='$...'/>
+    <button type="button" ng-click='createActivite()'>Ajouter</button>
+    <br><br>
+    <b>Total : ${{total}}</b>
+</div>
+<div class="right-pane">
+    <h3>Guests</h3>
+    <div ng-repeat='guest in salon.invites'>
+        <input type="text" ng-model='salon.invites[$index].firstName' class='reallyShort' placeholder="First name"/>
+        <input type="text" ng-model='salon.invites[$index].name' class='reallyShort' placeholder='Last name'/>
+        <input type="email" ng-model='salon.invites[$index].email' class='reallyShort' placeholder='Email'/>
+        <button type="button" ng-click='modify($index)'>Modifier</button>
+    </div>
+    <input type="text" ng-model='newInvite.firstName' class='reallyShort' placeholder="First name"/>
+    <input type="text" ng-model='newInvite.name' class='reallyShort' placeholder='Last name'/>
+    <input type="email" ng-model='newInvite.email' class='reallyShort' placeholder='Email'/>
+    <button type="button" ng-click='createInvite()'>Ajouter</button>
 </div>
