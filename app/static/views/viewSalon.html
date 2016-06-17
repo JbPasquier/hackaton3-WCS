@@ -5,7 +5,7 @@
         ||
     </small>
 </h2>
-<div style='text-align:left;'>
+<div class="pane" '>
     <span>Departure on
         {{salon.departureDate}}
         at
@@ -34,6 +34,7 @@
     <br><br>
     <b>Total : ${{total}}</b>
 </div>
+
 <div class="right-pane">
     <h3>Guests</h3>
     <div ng-repeat='guest in salon.invites'>
@@ -47,3 +48,4 @@
     <input type="email" ng-model='newInvite.email' class='reallyShort' placeholder='Email'/>
     <button type="button" ng-click='createInvite()'>Ajouter</button>
 </div>
+<div style="clear: both;"></div>
