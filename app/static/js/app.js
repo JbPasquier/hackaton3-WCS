@@ -83,8 +83,8 @@ angular.module('hswf', ['ngRoute'])
                 password: $scope.cpassword,
                 departurePlace: $scope.departurePlace,
                 arrivePlace: $scope.arrivePlace,
-                departureDate: $scope.departureDate,
-                returndate: $scope.returndate,
+                departureDate: new Date($scope.departureDate).getTime(),
+                returndate:  new Date($scope.returndate).getTime(),
                 description: $scope.description,
                 thematique: $scope.thematique
             }).then(function(res) {
