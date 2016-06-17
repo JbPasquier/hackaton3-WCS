@@ -1,27 +1,60 @@
 <hr>
 <article class="fullsize">
-    <h2>Accédez à votre salon</h2>
-    <input type="password" ng-model="salonPass" placeholder='Mot de passe de votre salon...'/>
-    <button type="button" ng-click='openSalon()'>Ouvrir mon salon</button><br>
+    <h2>Go to your room</h2>
+    <input type="password" ng-model="salonPass" placeholder='Password of your living room'/>
+    <button type="button" ng-click='openSalon()'>Open my salon</button><br>
     <span style='color: red'>
         {{error}}
     </span>
 </article>
 <hr>
 <article class="fullsize">
-    <h2>Créer un nouveau salon</h2>
-    <input type="text" ng-model="firstName" placeholder='Prénom'/>
-    <input type="text" ng-model="lastName" placeholder='Nom'/>
+    <h2>Create a new room</h2>
+    <h3>Identity</h3>
+    <input type="text" ng-model="firstName" placeholder='First Name'/>
+    <input type="text" ng-model="lastName" placeholder='Name'/>
     <input type="email" ng-model="email" placeholder='Email'/>
-    <input type="text" ng-model="title" placeholder='Intitulé de votre voyage'/>
-    <input type="text" ng-model="cpassword" placeholder='Choisissez un mot de passe (à partager avec vos amis)' />
-    <input type="text" ng-model="departurePlace" placeholder="Lieu de départ"/>
-    <input type="text" ng-model="arrivePlace" placeholder='Lieu de vos vacances'/>
-    <input type="number" ng-model="departureDate" placeholder='Date de départ en timestamp banane'/>
-    <input type="number" ng-model="returndate" placeholder="Date de retour en timestamp parce qu'on est cool"/>
-    <input type="text" ng-model="description" placeholder='Description de votre séjour'/>
-    <input type="text" ng-model="thematique" placeholder='Thématique SELECT BRODEL'/>
-    <button type="button" ng-click='createSalon()'>Créer un salon</button><br>
+    <h3>About your trip</h3>
+    <input type="text" ng-model="title" placeholder='Title of your trip'/>
+    <input type="text" ng-model="cpassword" placeholder='Choose a password (shared with friends)' />
+    <h3>Destination</h3>
+    <input type="text" ng-model="departurePlace" placeholder="Place of departure"/>
+    <input type="text" ng-model="arrivePlace" placeholder='Place your holiday'/>
+    <h3>Date</h3>
+    <input type="date" ng-model="departureDate" placeholder='Date of departure'/>
+    <input type="date" ng-model="returndate" placeholder="Return date"/>
+    <h3>Description of your trip</h3>
+    <input type="text" ng-model="description" placeholder='Description of your stay'/>
+    <h3>Thematic</h3>
+    <select type="select" ng-model="thematique" placeholder='Thematic'>
+        <option value="fisting camp"> Fisting camp </option>
+        <option value="sexfriend"> Sexfriend </option>
+        <option value="hot"> Hot </option>
+        <option value="gangbang"> Gangbang </option>
+        <option value="only virgin"> Only Virgin </option>
+        <option value="roleplay"> RolePlay </option>
+        <option value="cosplay"> Cosplay </option>
+        <option value="hardcore"> Hardcore </option>
+        <option value="bukkake"> Bukkake </option>
+        <option value="milf"> Milf </option>
+        <option value="daddy"> Daddy </option>
+        <option value="yoan"> Yoan </option>
+        <option value="animals"> Animals </option>
+        <option value="under 18"> Under 18 </option>
+        <option value="soft"> Soft </option>
+        <option value="toys"> Toys </option>
+        <option value="augmented reality"> Augmented Reality </option>
+        <option value="lesbian"> Lesbian </option>
+        <option value="fetishist"> Fetishist </option>
+        <option value="over 50"> Over 50 </option>
+        <option value="teen"> Teen </option>
+        <option value="bdsm"> Bdsm </option>
+        <option value="gore"> Gore </option>
+        <option value="php"> Php </option>
+    </select>
+    <br />
+    <br />
+    <button type="button" ng-click='createSalon()'>Creating a room</button><br>
     <span style='color: red'>
         {{error2}}
     </span>

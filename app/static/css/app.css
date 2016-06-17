@@ -77,6 +77,7 @@ article.fullsize {
     width: calc(100vw - 30px * 2);
     padding: 15px;
     text-align: center;
+    color: #7A0000;
 }
 article.fullsize .col-3 {
     width: calc(25vw - 20px);
@@ -114,15 +115,17 @@ article.fullsize .col-3 span {
 .footer {
     text-align: center;
 }
-input {
+input, select {
   padding: 10px;
+  background-color: white;
   border: none;
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
   display:block;
-  width: 75vw;
+  width: 60vw;
   margin: 0 auto;
   margin-bottom: 8px;
+  text-align: center;
 }
 input.short {
     width: 30%;
@@ -134,7 +137,7 @@ input.reallyShort {
     display: inline;
     margin: 0;
 }
-input:focus,
+input:focus, select:focus, select.focus,
 input.focus {
   border-bottom: solid 4px #008A29;
   margin-bottom: 6px;
@@ -150,9 +153,10 @@ button, input[type=submit] {
 	border:1px solid #999;
 	color:#666;
 	font-family:'Lucida Grande',Tahoma,Verdana,Arial,Sans-serif;
-	font-size:16px;
+	font-size:18px;
 	font-weight:700;
 	padding:4px 12px;
+    border-radius: 50px;
 }
 div.left-pane {
     display: inline-block;
