@@ -5,8 +5,6 @@
   "dependencies": {
     "pornhub": "",
     "serve-static": ""
-  },
-  "devDependencies": {
     "grunt": "",
     "grunt-autoprefixer": "",
     "grunt-concurrent": "",
