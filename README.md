@@ -21,3 +21,16 @@ bower install
 flask/bin/python db_create.py
 grunt server
 ```
+
+## Deploy
+
+```bash
+git push heroku jbp/deploy:master
+# may be facultative
+heroku run bash
+python db_create.py
+```
+
+## Demo
+
+https://hswf.herokuapp.com
