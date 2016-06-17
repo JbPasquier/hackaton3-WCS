@@ -4,7 +4,7 @@
   "description": "HaveSexWithFriends",
   "dependencies": {
     "pornhub": "",
-    "serve-static": ""
+    "serve-static": "",
     "grunt": "",
     "grunt-autoprefixer": "",
     "grunt-concurrent": "",
