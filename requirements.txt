@@ -1,4 +1,4 @@
-setuptools --no-use-wheel --upgrade
+setuptools --no-use-wheel
 flask==0.9
 flask-login
 flask-openid
